@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Login({ isLoggedIn, username, onLogin }) {
+function Login({ isLoggedIn, username, onLogin, error }) {
   const [val, setVal] = useState("");
 
   const handleChange = (event) => {
@@ -18,8 +18,14 @@ function Login({ isLoggedIn, username, onLogin }) {
   return (
     <div className="Login">
       <h2>Login to continue</h2>
-      <input type="text" onChange={handleChange} value={val} placeholder="Enter username" />
+      <input 
+        type="text" 
+        onChange={handleChange} 
+        value={val} 
+        placeholder="Enter username" 
+      />
       <button onClick={handleClick}>Click Me</button>
+      {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
   );
 }
