@@ -1,25 +1,20 @@
-import React from 'react';
-import Login from './Login'
+import React, { useState } from 'react';
+import Login from './Login';
 
 function App() {
-  Login.isLoggedIn == true;
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [username, setUsername] = useState('');
 
-  if(Login.isLoggedIn == false) {
-    return(
-      <>
-        <Login isLoggedIn={false}/>
-      </>
-    );
-  }
+  const handleLogin = (username) => {
+    setUsername(username);
+    setIsLoggedIn(true);
+  };
 
-  if(Login.isLoggedIn == true) {
-    return(
-      <>
-        <Login isLoggedIn={true} username="test"/>
-      </>
-    );
-  }
-
+  return (
+    <div>
+      <Login isLoggedIn={isLoggedIn} username={username} onLogin={handleLogin} />
+    </div>
+  );
 }
 
-export default App
+export default App;
