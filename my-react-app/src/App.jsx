@@ -1,13 +1,25 @@
-import Student from './Student'
+import React from 'react';
+import Login from './Login'
 
 function App() {
+  Login.isLoggedIn == true;
 
-  return(
-    <>
-      <Student name="Sponebob" age="20"/>
-      <Student name="Patrick" age="22"/>
-    </>
-  );
+  if(Login.isLoggedIn == false) {
+    return(
+      <>
+        <Login isLoggedIn={false}/>
+      </>
+    );
+  }
+
+  if(Login.isLoggedIn == true) {
+    return(
+      <>
+        <Login isLoggedIn={true} username="test"/>
+      </>
+    );
+  }
+
 }
 
 export default App
