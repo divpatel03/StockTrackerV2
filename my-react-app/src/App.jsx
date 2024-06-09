@@ -1,9 +1,12 @@
-import Header from './Header'
+import Student from './Student'
 
 function App() {
- 
+
   return(
-    <Header></Header>
+    <>
+      <Student name="Sponebob" age="20"/>
+      <Student name="Patrick" age="22"/>
+    </>
   );
 }
 
