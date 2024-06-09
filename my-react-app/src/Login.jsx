@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Login({ isLoggedIn, username, onLogin, error }) {
+function Login({ onLogin, error }) {
   const [val, setVal] = useState("");
 
   const handleChange = (event) => {
@@ -10,10 +10,6 @@ function Login({ isLoggedIn, username, onLogin, error }) {
   const handleClick = () => {
     onLogin(val);
   };
-
-  if (isLoggedIn) {
-    return <h2>Welcome {username}</h2>;
-  }
 
   return (
     <div className="Login">

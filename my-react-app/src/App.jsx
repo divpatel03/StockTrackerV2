@@ -19,16 +19,11 @@ function App() {
 
   return (
     <div>
-      <Login 
-        isLoggedIn={isLoggedIn} 
-        username={username} 
-        onLogin={handleLogin} 
-        error={error} 
-      />
-      
-      <Dashboard
-
-      />
+      {isLoggedIn ? (
+        <Dashboard username={username} />
+      ) : (
+        <Login onLogin={handleLogin} error={error} />
+      )}
     </div>
   );
 }
