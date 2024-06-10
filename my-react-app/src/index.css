@@ -18,7 +18,48 @@ body {
 .flex-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start; /* Align items to the top */
+    padding: 20px;
+}
+
+/* Navigation styles */
+nav.nav {
+    width: 200px; /* Fixed width for the nav */
+    background-color: #111; /* Dark background for the nav */
+    color: #fff; /* White text */
+    padding: 20px;
+    height: 100vh; /* Full height of the viewport */
+    position: fixed; /* Fix position on the left */
+    top: 0;
+    left: 0;
+}
+
+nav.nav a {
+    color: #818181;
+    text-decoration: none;
+    font-size: 1.1em;
+    display: block;
+    padding: 10px 0;
+}
+
+nav.nav a:hover {
+    color: #f1f1f1;
+}
+
+nav.nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav.nav .nav-title {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: rgb(140, 236, 85);
+}
+
+/* Adjust the main content to leave space for the nav */
+.leftSide, .rightSide {
+    margin-left: 220px; /* Adjust based on the width of the nav */
     padding: 20px;
 }
 
@@ -34,29 +75,6 @@ header h1 {
     text-align: center;
     font-size: 2em;
     color: #007bff; /* Blue header color */
-}
-
-/* Navigation styles */
-nav {
-    text-align: center;
-    padding: 20px 0;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.LoginText {
-    text-align: center;
-}
-
-nav a {
-    color: #007bff;
-    margin: 0 15px;
-    font-size: 1.1em;
-    text-decoration: none;
-}
-
-nav a:hover {
-    text-decoration: underline;
 }
 
 /* Main content styles */
