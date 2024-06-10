@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function App() {
     const [loggedIn, setIsLoggedIn] = useState(false);
     const [name, setName] = useState("");
+    const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -14,6 +16,7 @@ function App() {
         else {
             alert("Logged In!");
             setIsLoggedIn(true);
+            navigate('/dashboard');
         }
     }
   
