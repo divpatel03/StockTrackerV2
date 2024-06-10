@@ -13,14 +13,21 @@ function Dashboard() {
             setCurrTime(new Date().toLocaleTimeString());
         }, 1000); // Update every second
 
-        const now = new Date();
-        const hour = now.getHours();
-        if(hour <= 16 && hour >= 9.5) {
-            setMarketMessage("Market: Open");
+        function setMarketMessageBasedOnTime() {
+            const now = new Date();
+            const hour = now.getHours();
+            const minute = now.getMinutes();
+        
+            if ((hour > 9 || (hour === 9 && minute >= 30)) && (hour < 16 || (hour === 16 && minute === 0))) {
+                setMarketMessage("Market: Open");
+            } else {
+                setMarketMessage("Market: Closed");
+            }
         }
-        else {
-            setMarketMessage("Market Closed");
-        }
+        
+        // Example usage
+        setMarketMessageBasedOnTime();
+        
 
         // Cleanup interval on component unmount
         return () => clearInterval(intervalId);
@@ -28,6 +35,17 @@ function Dashboard() {
 
     return (
         <div className="flex-container">
+            <nav className="nav">
+                <a href="/Dashboard" className="nav-title">StockTracker</a>
+                <ul>
+                    <li>
+                        <a href="/About">About Us</a>
+                    </li>
+                    <li>
+                        <a href="/Contact">Contact</a>
+                    </li>
+                </ul>
+            </nav>
             <div className = "leftSide">
             <h1>{username}</h1>
             <h3>Current Time (EST): {currTime}</h3>
