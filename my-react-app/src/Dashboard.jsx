@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import './Dashboard.css'; // Ensure this path is correct
 
 function Dashboard() {
     const location = useLocation();
@@ -7,6 +8,8 @@ function Dashboard() {
     const [currTime, setCurrTime] = useState(new Date().toLocaleTimeString());
     const [marketMessage, setMarketMessage] = useState("");
     const [sidebarVisible, setSidebarVisible] = useState(false);
+    const [stocks, setStocks] = useState([]);
+    const [inputValue, setInputValue] = useState('');
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -31,6 +34,22 @@ function Dashboard() {
         return () => clearInterval(intervalId);
     }, []);
 
+    const handleInputChange = (e) => {
+        setInputValue(e.target.value);
+    };
+
+    const handleAddStock = () => {
+        if (inputValue !== '') {
+            setStocks([...stocks, inputValue]);
+            setInputValue('');
+        }
+    };
+
+    const handleDeleteStock = (index) => {
+        const newStocks = stocks.filter((_, i) => i !== index);
+        setStocks(newStocks);
+    };
+
     return (
         <div className="dashboard-container">
             <nav className={`nav ${sidebarVisible ? 'visible' : 'hidden'}`}>
@@ -48,6 +67,23 @@ function Dashboard() {
                 <div className="leftSide">
                     <h1>{username}</h1>
                     <h3>Current Time (EST): {currTime}</h3>
+                    <div className="input-container">
+                        <input
+                            type="text"
+                            value={inputValue}
+                            onChange={handleInputChange}
+                            placeholder="Enter a stock name"
+                        />
+                        <button onClick={handleAddStock}>Add Stock</button>
+                    </div>
+                    <div className="stock-list">
+                        {stocks.map((stock, index) => (
+                            <div key={index} className="stock-row">
+                                <span>{stock}</span>
+                                <button onClick={() => handleDeleteStock(index)}>Delete</button>
+                            </div>
+                        ))}
+                    </div>
                 </div>
                 <div className="rightSide">
                     <h2><p>{marketMessage}</p></h2>

@@ -80,7 +80,6 @@ nav.nav .nav-title {
     display: flex;
     align-items: center;
     gap: 10px; /* Adjust the spacing between the input and button */
-    margin-bottom: 20px; /* Space below the input container */
 }
 
 .input-container input {
@@ -91,29 +90,6 @@ nav.nav .nav-title {
 .input-container button {
     padding: 10px 20px;
     font-size: 16px;
-    cursor: pointer;
-}
-
-/* Stock list and row styles */
-.stock-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* Space between stock rows */
-}
-
-.stock-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.stock-row button {
-    padding: 5px 10px;
-    font-size: 14px;
     cursor: pointer;
 }
 
