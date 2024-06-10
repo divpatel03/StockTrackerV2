@@ -14,7 +14,7 @@ function Login() {
 
         else {
             alert("Logged In!");
-            dashboardNavigate('/dashboard');
+            dashboardNavigate('/dashboard', { state: { username: name } });
         }
     }
   
