@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import './Dashboard.css'; // Adjust the path as needed
 
 function Dashboard() {
     const location = useLocation();

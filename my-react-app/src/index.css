@@ -17,7 +17,7 @@ body {
 /* Flex container for left and right sides */
 .flex-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Space between left and right */
     align-items: flex-start; /* Align items to the top */
     padding: 20px;
 }
@@ -54,13 +54,32 @@ nav.nav ul {
 nav.nav .nav-title {
     font-size: 1.5em;
     margin-bottom: 20px;
-    color: rgb(140, 236, 85);
+    color: rgb(133, 248, 67);
 }
 
 /* Adjust the main content to leave space for the nav */
-.leftSide, .rightSide {
+.main-content {
+    flex-grow: 1;
     margin-left: 220px; /* Adjust based on the width of the nav */
     padding: 20px;
+    display: flex;
+    justify-content: space-between; /* Space between left and right */
+    align-items: flex-start;
+}
+
+/* Left side styles */
+.leftSide {
+    flex: 1;
+    padding: 20px;
+    min-width: 0; /* Allow the element to shrink below its content's width */
+    word-wrap: break-word; /* Ensure long words break properly */
+}
+
+/* Right side styles */
+.rightSide {
+    flex: 0 0 auto; /* Do not grow or shrink */
+    padding: 20px;
+    margin-left: auto; /* Push the right side to the far right */
 }
 
 /* Header styles */
