@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 
 function App() {
+    let isLoggedIn = false;
     const [name, setName] = useState("");
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        alert("Form Submitted");
     }
 
-    let isLoggedIn = false;
-
-    
     return(
         <div className="Login">
             <h1>Login</h1>
