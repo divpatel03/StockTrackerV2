@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import './Dashboard.css'; // Ensure this path is correct
 
 function Dashboard() {
     const location = useLocation();
@@ -61,6 +60,11 @@ function Dashboard() {
                     <li>
                         <a href="/Contact">Contact</a>
                     </li>
+                    <div className="logoutButton">
+                        <li>
+                            <a href="/Login">Logout</a>
+                        </li>
+                    </div>
                 </ul>
             </nav>
             <div className={`main-content ${sidebarVisible ? 'with-sidebar' : 'without-sidebar'}`}>

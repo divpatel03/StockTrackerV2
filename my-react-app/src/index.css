@@ -78,7 +78,7 @@ nav.nav .nav-title {
 /* Input container styles */
 .input-container {
     display: flex;
-    align-items: center;
+    align-items: center; /* Align items vertically in the center */
     gap: 10px; /* Adjust the spacing between the input and button */
     margin-bottom: 20px; /* Space below the input container */
 }
@@ -86,13 +86,19 @@ nav.nav .nav-title {
 .input-container input {
     padding: 10px;
     font-size: 16px;
+    flex: 1; /* Make the input take up the remaining space */
+    height: auto; /* Ensure height is determined by content */
+    margin-top: 2px; /* Adjust this value to bring the input down */
 }
 
 .input-container button {
-    padding: 10px 20px;
+    padding: 10px;
     font-size: 16px;
-    cursor: pointer;
+    height: auto; /* Ensure height is determined by content */
+    box-sizing: border-box; /* Include padding in the width */
+    flex-shrink: 0; /* Prevent the button from shrinking */
 }
+
 
 /* Stock list and row styles */
 .stock-list {

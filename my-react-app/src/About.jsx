@@ -12,6 +12,11 @@ function About(){
                     <li>
                         <a href="/Contact">Contact</a>
                     </li>
+                    <div className="logoutButton">
+                        <li>
+                            <a href="/Login">Logout</a>
+                        </li>
+                    </div>
                 </ul>
             </nav>
         </div>
