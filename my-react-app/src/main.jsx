@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
 import Dashboard from './Dashboard.jsx';
+import Login from './Login.jsx'
 import './index.css';
 
 import {
@@ -14,6 +15,11 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
   },
+  {
+    path: "/Login",
+    element: <Login />
+  },
+
   {
     path: "/dashboard",
     element: <Dashboard />
