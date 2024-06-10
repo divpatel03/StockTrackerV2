@@ -20,11 +20,16 @@ function Login() {
   
     return(
         <div className="Login">
-            <h1>Login</h1>
-            <form onSubmit={handleSubmit}>
-            <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-            <input type="submit"/>
-            </form>
+            <div className="LoginText">
+                <h2>Login</h2>
+            </div>
+            <div className="Username">
+                <h4>Username</h4>
+                <form onSubmit={handleSubmit}>
+                <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+                <input type="submit"/>
+                </form>
+            </div>
         </div>
     );
 }
