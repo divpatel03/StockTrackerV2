@@ -21,10 +21,10 @@ function About() {
             </nav>
             <div className="main-content">
                 <div className="aboutDescription">
-                    <h1>StockTrack: Your Ultimate Stock Tracking Companion</h1>
-                    <p>Welcome to StockTrack, the premier stock tracking application designed to empower investors of all levels. 
+                    <h1>StockTracker: Your Ultimate Stock Tracking Companion</h1>
+                    <p>Welcome to StockTracker, the premier stock tracking application designed to empower investors of all levels. 
                         Whether you're a seasoned trader or just starting, 
-                        StockTrack provides the tools and insights you need to make informed investment decisions.</p>
+                        StockTracker provides the tools and insights you need to make informed investment decisions.</p>
                     <h2>Key Features:</h2>
                     <p>
                     <ul>
@@ -34,7 +34,7 @@ function About() {
                         <li>News & Insights: Stay ahead of the market with the latest news, expert analysis, and market insights. Our curated news feed ensures you are always informed about the factors impacting your investments.</li>
                         <li>Portfolio Management: Monitor your investments and track your portfolio’s performance with ease. Get detailed reports and analytics to evaluate your investment strategies.</li>
                         <li>User-Friendly Interface: Enjoy a sleek, intuitive design that makes stock tracking effortless. Our user-friendly interface ensures a seamless experience on both desktop and mobile devices.</li>
-                        <li>Secure & Reliable: Your data security is our top priority. StockTrack employs advanced encryption and security measures to keep your information safe.</li>
+                        <li>Secure & Reliable: Your data security is our top priority. StockTracker employs advanced encryption and security measures to keep your information safe.</li>
                     </ul>
                     </p>
                 </div>
