@@ -21,7 +21,7 @@ function Login() {
     return(
         <div className="Login">
             <div className="LoginText">
-                <h2>Login</h2>
+                <h2>StockTracker</h2>
             </div>
             <div className="Username">
                 <h4>Username</h4>
