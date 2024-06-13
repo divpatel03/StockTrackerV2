@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useInsertionEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 
@@ -10,6 +10,7 @@ function Dashboard() {
     const [sidebarVisible, setSidebarVisible] = useState(false);
     const [stocks, setStocks] = useState([]);
     const [inputValue, setInputValue] = useState('');
+    const [stockPrices, setStockPrices] = useState({});
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -50,6 +51,31 @@ function Dashboard() {
         setStocks(newStocks);
     };
 
+    useEffect(() => {
+        if (stocks.length > 0) {
+            const intervalId = setInterval(() => {
+                fetchStockPrices(stocks);
+            }, 2000); // Fetch every 2 seconds
+
+            return () => clearInterval(intervalId);
+        }
+    }, [stocks]);
+
+    const fetchStockPrices = (stockSymbols) => {
+        axios.post('http://localhost:8080/api/stock', stockSymbols)
+            .then(response => {
+                const prices = response.data.reduce((acc, stock) => {
+                    acc[stock.symbol] = stock.price;
+                    return acc;
+                }, {});
+                setStockPrices(prices);
+            })
+            .catch(error => {
+                console.error('There was an error fetching the stock prices!', error);
+            });
+    };
+
+
     return (
         <div className="dashboard-container">
             <nav className={`nav ${sidebarVisible ? 'visible' : 'hidden'}`}>
@@ -85,6 +111,7 @@ function Dashboard() {
                         {stocks.map((stock, index) => (
                             <div key={index} className="stock-row">
                                 <span>{stock}</span>
+                                <span>{stockPrices[stock] ? `$${stockPrices[stock]}` : 'Loading...'}</span>
                                 <button onClick={() => handleDeleteStock(index)}>Delete</button>
                             </div>
                         ))}
@@ -97,5 +124,6 @@ function Dashboard() {
         </div>
     );
 }
+
 
 export default Dashboard;
