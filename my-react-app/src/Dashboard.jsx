@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useInsertionEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 
@@ -35,22 +35,6 @@ function Dashboard() {
         return () => clearInterval(intervalId);
     }, []);
 
-    const handleInputChange = (e) => {
-        setInputValue(e.target.value);
-    };
-
-    const handleAddStock = () => {
-        if (inputValue !== '') {
-            setStocks([...stocks, inputValue]);
-            setInputValue('');
-        }
-    };
-
-    const handleDeleteStock = (index) => {
-        const newStocks = stocks.filter((_, i) => i !== index);
-        setStocks(newStocks);
-    };
-
     useEffect(() => {
         if (stocks.length > 0) {
             const intervalId = setInterval(() => {
@@ -75,6 +59,21 @@ function Dashboard() {
             });
     };
 
+    const handleInputChange = (e) => {
+        setInputValue(e.target.value);
+    };
+
+    const handleAddStock = () => {
+        if (inputValue !== '') {
+            setStocks([...stocks, inputValue]);
+            setInputValue('');
+        }
+    };
+
+    const handleDeleteStock = (index) => {
+        const newStocks = stocks.filter((_, i) => i !== index);
+        setStocks(newStocks);
+    };
 
     return (
         <div className="dashboard-container">
@@ -124,6 +123,5 @@ function Dashboard() {
         </div>
     );
 }
-
 
 export default Dashboard;
