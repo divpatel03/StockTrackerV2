@@ -1,35 +1,31 @@
-/* General styles */
 body {
-    background-color: #f5f5f5; /* Light background */
-    color: #333; /* Dark text for readability */
+    background-color: #f5f5f5; 
+    color: #333;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-/* Container styles */
 .container {
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Flex container for left and right sides */
 .flex-container {
     display: flex;
-    justify-content: space-between; /* Space between left and right */
-    align-items: flex-start; /* Align items to the top */
+    justify-content: space-between; 
+    align-items: flex-start; 
     padding: 20px;
 }
 
-/* Navigation styles */
 nav.nav {
-    width: 200px; /* Fixed width for the nav */
-    background-color: #111; /* Dark background for the nav */
-    color: #fff; /* White text */
+    width: 200px; 
+    background-color: #111; 
+    color: #fff; 
     padding: 20px;
-    height: 100vh; /* Full height of the viewport */
-    position: fixed; /* Fix position on the left */
+    height: 100vh; 
+    position: fixed; 
     top: 0;
     left: 0;
 }
@@ -57,54 +53,50 @@ nav.nav .nav-title {
     color: #007bff;
 }
 
-/* Adjust the main content to leave space for the nav */
 .main-content {
     flex-grow: 1;
-    margin-left: 220px; /* Adjust based on the width of the nav */
+    margin-left: 220px; 
     padding: 20px;
     display: flex;
-    justify-content: space-between; /* Space between left and right */
+    justify-content: space-between; 
     align-items: flex-start;
 }
 
-/* Left side styles */
 .leftSide {
     flex-grow: 1;
     padding: 20px;
-    min-width: 0; /* Allow the element to shrink below its content's width */
-    word-wrap: break-word; /* Ensure long words break properly */
+    min-width: 0; 
+    word-wrap: break-word; 
 }
 
-/* Input container styles */
 .input-container {
     display: flex;
-    align-items: center; /* Align items vertically in the center */
-    gap: 10px; /* Adjust the spacing between the input and button */
-    margin-bottom: 20px; /* Space below the input container */
+    align-items: center; 
+    gap: 10px; 
+    margin-bottom: 20px; 
 }
 
 .input-container input {
     padding: 10px;
     font-size: 16px;
-    flex: 1; /* Make the input take up the remaining space */
-    height: auto; /* Ensure height is determined by content */
-    margin-top: 2px; /* Adjust this value to bring the input down */
+    flex: 1; 
+    height: auto; 
+    margin-top: 2px; 
 }
 
 .input-container button {
     padding: 10px;
     font-size: 16px;
-    height: auto; /* Ensure height is determined by content */
-    box-sizing: border-box; /* Include padding in the width */
-    flex-shrink: 0; /* Prevent the button from shrinking */
+    height: auto; 
+    box-sizing: border-box; 
+    flex-shrink: 0; 
 }
 
 
-/* Stock list and row styles */
 .stock-list {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Space between stock rows */
+    gap: 10px;
 }
 
 .stock-row {
@@ -123,15 +115,13 @@ nav.nav .nav-title {
     cursor: pointer;
 }
 
-/* Right side styles */
 .rightSide {
     flex-grow: 1;
     padding: 20px;
-    margin-left: auto; /* Push the right side to the far right */
+    margin-left: auto; 
     text-align: right;
 }
 
-/* Header styles */
 header {
     background-color: #fff;
     padding: 20px 0;
@@ -142,10 +132,9 @@ header h1 {
     margin: 0;
     text-align: center;
     font-size: 2em;
-    color: #007bff; /* Blue header color */
+    color: #007bff;
 }
 
-/* Main content area */
 main {
     background-color: #fff;
     padding: 20px;
@@ -155,7 +144,6 @@ main {
     width: 100%;
 }
 
-/* Card styles */
 .card {
     background-color: #fff;
     padding: 20px;
@@ -168,7 +156,6 @@ main {
     margin-top: 0;
 }
 
-/* Login container styles */
 .Login {
     background-color: #fff;
     padding: 40px;
@@ -179,18 +166,16 @@ main {
     box-sizing: border-box;
     text-align: center;
     margin: 0 auto;
-    margin-top: 50px; /* Add margin top to center vertically */
+    margin-top: 50px; 
 }
 
-/* Login text styles */
 .LoginText h2 {
     margin: 0;
-    color: #007bff; /* Blue color for heading */
+    color: #007bff; 
     font-size: 2em;
     margin-bottom: 20px;
 }
 
-/* Username container styles */
 .Username h4 {
     margin: 0;
     color: #555;
@@ -198,7 +183,6 @@ main {
     margin-bottom: 10px;
 }
 
-/* Input field styles */
 input[type="text"] {
     width: 100%;
     padding: 10px;
@@ -209,10 +193,9 @@ input[type="text"] {
     box-sizing: border-box;
 }
 
-/* Submit button styles */
 input[type="submit"] {
-    background-color: #007bff; /* Blue button background */
-    color: #fff; /* White text */
+    background-color: #007bff; 
+    color: #fff; 
     border: none;
     border-radius: 4px;
     padding: 10px 20px;
@@ -222,14 +205,13 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0056b3; 
 }
 
 
-/* Button styles */
 button, input[type="submit"] {
-    background-color: #007bff; /* Blue button background */
-    color: #fff; /* White text */
+    background-color: #007bff; 
+    color: #fff; 
     border: none;
     border-radius: 4px;
     padding: 10px 20px;
@@ -240,10 +222,10 @@ button, input[type="submit"] {
 }
 
 button:hover, input[type="submit"]:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0056b3; 
 }
 
-/* Form styles */
+
 input[type="text"], input[type="password"], textarea {
     background-color: #fff;
     color: #333;
@@ -260,9 +242,9 @@ input[type="text"]::placeholder, input[type="password"]::placeholder, textarea::
     color: #999;
 }
 
-/* About description styles */
+
 .aboutDescription {
-    max-width: 800px; /* Limit the width for better readability */
+    max-width: 800px; 
     padding: 40px;
     background-color: #fff;
     border-radius: 8px;
@@ -272,7 +254,7 @@ input[type="text"]::placeholder, input[type="password"]::placeholder, textarea::
 .aboutDescription h1 {
     margin-top: 0;
     font-size: 2.5em;
-    color: #007bff; /* Blue heading color */
+    color: #007bff; 
 }
 
 .aboutDescription h2 {
@@ -297,7 +279,6 @@ input[type="text"]::placeholder, input[type="password"]::placeholder, textarea::
 }
 
 
-/* Footer styles */
 footer {
     background-color: #fff;
     color: #333;
